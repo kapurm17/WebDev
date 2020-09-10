@@ -1,0 +1,14 @@
+{
+  "name": "filesystem",
+  "version": "1.0.0",
+  "description": "this is basic file system package",
+  "main": "fileSys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mayank",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^3.0.0"
+  }
+}
