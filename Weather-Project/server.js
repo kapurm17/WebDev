@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post("/", function(req, res){
   const query = req.body.loc;
 
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=b575d8b6e4fd077063f535ff4de34882";
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=metric&appid=b575d8b6e4fd077063f535ff4de34882";
 
   https.get(url, function(response) {
     console.log(response.statusCode);
@@ -20,10 +20,10 @@ app.post("/", function(req, res){
       const temp = weatherData.main.temp;
       const desc = weatherData.weather[0].description;
       const icon = weatherData.weather[0].icon;
-      const imageURL = "https://openweathermap.org/img/wn/" + icon;
+      const imageURL = "https://openweathermap.org/img/wn/" + icon + ".png";
 
 
-      res.write('<h1>'+"Temp in " +query+ " : " + temp + '</h1>');
+      res.write('<h1>'+"Temp in " +query+ " : " + temp+ " degree Celcius"+ '</h1>');
       res.write('<p>' + "Described as : " + desc + '</p>');
       res.write('<img alt= "image" src='+imageURL+'>');
       res.send();
