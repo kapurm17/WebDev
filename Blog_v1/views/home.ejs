@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+
+<h1>HOME</h1>
+<p>
+<%= homeEjsSent%>
+</p>
+
+<% for(let i=0; i<articlePost.length; i++){%>
+  <h5><%= articlePost[i]["Title"];%> </h5>
+  <p> <%= articlePost[i]["postData"];%> </p>
+  <% }%>
+
+<%- include("partials/footer"); -%>

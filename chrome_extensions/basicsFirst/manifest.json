@@ -2,18 +2,25 @@
   "name": "Getting started example",
   "version": "1.0",
   "description": "Building an extension",
+  "manifest_version": 2,
 
-  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["content.js"]
+    }
+  ],
 
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+  "browser_action" : {
+    "default_action" : "icon.jpg"
   },
 
-  "page_action": {
-      "default_popup": "popup.html"
-    },
+  "background": {
+    "scripts": ["background.js"]
+  }
 
-  "manifest_version": 2
+  
 
 }
