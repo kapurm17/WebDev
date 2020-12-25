@@ -2,9 +2,17 @@ var len = document.querySelectorAll(".drum").length;
 
 
 function handleClick() {
+
   if(this.innerHTML == 'w') {
     var audio = new Audio("sounds/crash.mp3");
     audio.play();
+    var key = document.querySelector(".w");
+    key.classList.add("playing");
+    setTimeout(()=>{
+      key.classList.remove("playing");
+    }, 100);
+
+
   } else if (this.innerHTML == 'a') {
     var audio = new Audio("sounds/kick-bass.mp3");
     audio.play();
