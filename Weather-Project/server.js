@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.post("/", function(req, res){
   const query = req.body.loc;
 
-  let url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=metric&appid=b575d8b6e4fd077063f535ff4de34882";
+  let url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + // Add you apikey;
 
   https.get(url, function(response) {
     console.log(response.statusCode);
